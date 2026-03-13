@@ -1,0 +1,6 @@
+CREATE TABLE blog_images (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  blog_id uuid REFERENCES ngo_blogs(id) ON DELETE CASCADE,
+  image_url TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);

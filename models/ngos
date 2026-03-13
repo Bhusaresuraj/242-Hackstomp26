@@ -1,0 +1,16 @@
+Purpose: NGO profile + reputation score.
+
+Recommended Fields
+column	type	purpose
+id	uuid (PK)	unique id
+name	text	NGO name
+description	text	NGO mission
+location	text	city/state
+contact_email	text	NGO contact
+contact_phone	text	contact
+logo_url	text	NGO logo
+website	text	optional
+total_drives	int	number of drives
+success_score	int	reputation score
+verified	boolean	platform verified
+created_at	timestamp	created

@@ -1,0 +1,9 @@
+CREATE TABLE waste_buyers (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  company_name TEXT,
+  contact_person TEXT,
+  phone TEXT,
+  location TEXT,
+  waste_type TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);

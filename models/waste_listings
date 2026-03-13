@@ -1,0 +1,10 @@
+CREATE TABLE waste_listings (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  drive_id uuid REFERENCES ngo_drives(id) ON DELETE CASCADE,
+  ngo_id uuid REFERENCES ngos(id) ON DELETE CASCADE,
+  waste_type TEXT,
+  quantity NUMERIC,
+  price_per_kg NUMERIC,
+  status TEXT DEFAULT 'available',
+  created_at TIMESTAMP DEFAULT NOW()
+);

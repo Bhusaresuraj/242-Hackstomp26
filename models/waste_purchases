@@ -1,0 +1,8 @@
+CREATE TABLE waste_purchases (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  listing_id uuid REFERENCES waste_listings(id) ON DELETE CASCADE,
+  buyer_id uuid REFERENCES waste_buyers(id) ON DELETE CASCADE,
+  quantity NUMERIC,
+  total_price NUMERIC,
+  created_at TIMESTAMP DEFAULT NOW()
+);

@@ -1,0 +1,10 @@
+CREATE TABLE village_reports (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  worker_id uuid REFERENCES ngo_workers(id) ON DELETE CASCADE,
+  ngo_id uuid REFERENCES ngos(id) ON DELETE CASCADE,
+  village_name TEXT,
+  report_type TEXT,
+  description TEXT,
+  urgency_level INT,
+  created_at TIMESTAMP DEFAULT NOW()
+);

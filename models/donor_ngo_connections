@@ -1,0 +1,6 @@
+CREATE TABLE donor_ngo_connections (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  donor_id uuid REFERENCES donors(id) ON DELETE CASCADE,
+  ngo_id uuid REFERENCES ngos(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT NOW()
+);
