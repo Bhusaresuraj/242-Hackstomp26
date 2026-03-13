@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 
-<<<<<<< HEAD
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -49,5 +49,4 @@ body {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
-=======
->>>>>>> 29fbe9de68a5fcd0761b1f3caf4de0b2afcaad55
+
