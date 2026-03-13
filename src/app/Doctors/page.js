@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from 'next/navigation';
-
+import DoctorBlogModal from "@/Components/DoctorBlogModal";
 import DoctorProfileCard from "@/Components/DoctorProfileCard";
 import DoctorSidebar from "@/Components/DoctorSidebar";
 import NgoCard from "@/Components/NgoCard";
@@ -25,7 +25,8 @@ export default function Dashboard() {
 
   const [doctor, setDoctor] = useState(null);
 const [showModal, setShowModal] = useState(false);
- 
+ const [blogs, setBlogs] = useState([]);
+const [showBlogModal, setShowBlogModal] = useState(false);
 
    useEffect(() => {
 
@@ -38,28 +39,19 @@ const [showModal, setShowModal] = useState(false);
 
 }, []);
 
+function addBlog(blog) {
+  setBlogs((prev) => [blog, ...prev]);
+}
+
+
+
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-200">
       <DoctorSidebar />
 
       <div className="flex-1 p-8">
 
-        {/* Doctor Info */}
-        <div className="mb-6 rounded-2xl bg-white p-6 shadow-md">
-
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-500">
-            Authenticated Doctor
-          </p>
-
-          <h1 className="mt-2 text-3xl font-bold text-slate-900">
-            Name: {doctorName}
-          </h1>
-
-          <p className="mt-2 text-base text-slate-600">
-            Email: {doctorEmail}
-          </p>
-
-        </div>
+      
 
      <DoctorProfileCard
   doctor={doctor}
@@ -96,16 +88,29 @@ const [showModal, setShowModal] = useState(false);
               Your Blogs
             </h2>
 
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-xl hover:bg-blue-600">
-              Write Blog
-            </button>
+           <button
+  onClick={() => setShowBlogModal(true)}
+  className="bg-blue-500 text-white px-4 py-2 rounded-xl hover:bg-blue-600"
+>
+  Write Blog
+</button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <BlogCard />
-            <BlogCard />
-          </div>
+          {showBlogModal && (
+  <DoctorBlogModal
+    doctor={doctor}
+    addBlog={addBlog}
+    close={() => setShowBlogModal(false)}
+  />
+)}
 
+         <div className="grid md:grid-cols-2 gap-6">
+
+  {blogs.map((blog) => (
+    <BlogCard key={blog.id} blog={blog} />
+  ))}
+
+</div>
         </div>
 
       </div>

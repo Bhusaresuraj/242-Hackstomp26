@@ -75,3 +75,26 @@ export async function updateDoctorProfile(id, formData) {
 
   return data;
 }
+
+export async function createDoctorBlog(doctorId, blogData) {
+
+  const { data, error } = await supabase
+    .from("doctor_blogs")
+    .insert([
+      {
+        doctor_id: doctorId,
+        title: blogData.title,
+        content: blogData.content,
+        image: blogData.image
+      }
+    ])
+    .select()
+    .single();
+
+  if (error) {
+    console.error("Blog creation error:", error);
+    return null;
+  }
+
+  return data;
+}
