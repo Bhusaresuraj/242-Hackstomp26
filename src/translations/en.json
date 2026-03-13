@@ -1,0 +1,20 @@
+{
+  "labels": {
+    "search": "Search disease or symptom...",
+    "causes": "Possible Causes",
+    "advice": "What You Should Do",
+    "doctor": "When To Visit Doctor",
+    "guidance": "Healthcare Guidance",
+    "consultation": "Doctor Consultation",
+    "campaigns": "NGO Campaigns"
+  },
+
+  "symptoms": {
+    "fever": "Fever",
+    "headache": "Headache",
+    "vomiting": "Vomiting",
+    "cough": "Cough",
+    "diarrhea": "Diarrhea",
+    "eye": "Eye Irritation"
+  }
+}
