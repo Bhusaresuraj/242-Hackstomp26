@@ -134,7 +134,7 @@ const LoginPage = () => {
       <div className="max-w-2xl w-full space-y-8 bg-white p-10 rounded-2xl shadow-xl border border-teal-100">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-teal-900 tracking-tight">
-            SevaSwathya
+            SevaSwasthya
           </h1>
           <h2 className="mt-2 text-lg text-teal-600">
             {isLogin ? 'Sign in to your account' : 'Create a new account'}
@@ -146,21 +146,20 @@ const LoginPage = () => {
             <div
               key={role.id}
               onClick={() => setSelectedRole(role.id)}
-              className={`relative flex flex-col items-center p-4 cursor-pointer rounded-xl border-2 transition-all duration-200 ease-in-out ${
-                selectedRole === role.id
-                  ? 'border-teal-500 bg-teal-50 shadow-md transform scale-105'
-                  : 'border-gray-100 hover:border-teal-200 hover:bg-gray-50'
-              }`}
+              className={`relative flex flex-col items-center p-4 cursor-pointer rounded-xl border-2 transition-all duration-200 ease-in-out ${selectedRole === role.id
+                ? 'border-teal-500 bg-teal-50 shadow-md transform scale-105'
+                : 'border-gray-100 hover:border-teal-200 hover:bg-gray-50'
+                }`}
             >
               <div className={`p-3 rounded-full ${selectedRole === role.id ? 'bg-teal-100 text-teal-700' : 'bg-gray-100 text-gray-500'}`}>
                 {role.icon}
               </div>
               <h3 className={`mt-3 text-sm font-bold ${selectedRole === role.id ? 'text-teal-900' : 'text-gray-900'}`}>{role.label}</h3>
               <p className="text-xs text-gray-500 mt-1">{role.description}</p>
-              
+
               {selectedRole === role.id && (
                 <div className="absolute top-2 right-2">
-                   <span className="flex h-3 w-3">
+                  <span className="flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
                   </span>

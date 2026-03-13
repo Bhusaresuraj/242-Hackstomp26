@@ -1,0 +1,9 @@
+{
+  "name": "Healthcare Awareness Platform",
+  "short_name": "Healthcare",
+  "description": "Healthcare guidance and awareness platform",
+  "start_url": "/Blogs",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f766e"
+}
