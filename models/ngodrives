@@ -1,0 +1,12 @@
+CREATE TABLE ngo_drives (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  ngo_id uuid REFERENCES ngos(id) ON DELETE CASCADE,
+  title TEXT,
+  description TEXT,
+  location TEXT,
+  drive_date DATE,
+  waste_collected NUMERIC,
+  volunteers_count INT,
+  success BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMP DEFAULT NOW()
+);

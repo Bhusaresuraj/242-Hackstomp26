@@ -1,0 +1,9 @@
+Columns:
+
+column	type
+id	uuid
+doctor_id	uuid
+title	text
+content	text
+image	text
+created_at	timestamp

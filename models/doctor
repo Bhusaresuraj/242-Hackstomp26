@@ -1,0 +1,14 @@
+Columns:
+
+column	type	description
+id	uuid (PK)	same as auth.users.id
+name	text	doctor's full name
+degree	text	MBBS / MD etc
+specialization	text	cardiology, general etc
+experience_years	integer	years of experience
+hospital	text	affiliated hospital
+bio	text	doctor description
+profile_image	text	image URL
+verified	boolean	default false
+created_at	timestamp	record creation
+

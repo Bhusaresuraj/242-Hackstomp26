@@ -1,0 +1,10 @@
+Columns:
+
+column	type
+id	uuid
+doctor_id	uuid
+ngo_id	uuid
+role	text
+start_year	int
+end_year	int
+created_at	timestamp
