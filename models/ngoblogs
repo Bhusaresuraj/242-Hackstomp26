@@ -1,0 +1,7 @@
+CREATE TABLE ngo_blogs (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  ngo_id uuid REFERENCES ngos(id) ON DELETE CASCADE,
+  title TEXT,
+  content TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);

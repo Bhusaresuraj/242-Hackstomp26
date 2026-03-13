@@ -1,0 +1,8 @@
+column	type	description
+id	uuid	primary key
+ngo_id	uuid	NGO they belong to
+name	text	worker name
+phone	text	contact
+village_assigned	text	village
+role	text	health worker / sanitation
+joined_at	timestamp	join date

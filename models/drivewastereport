@@ -1,0 +1,8 @@
+Fields
+column	type
+id	uuid
+drive_id	uuid
+description	text
+waste_type	text
+quantity	numeric
+created_at	timestamp

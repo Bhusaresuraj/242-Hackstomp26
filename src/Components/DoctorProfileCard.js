@@ -1,5 +1,5 @@
 import { CheckCircle } from "lucide-react";
-
+import Link from "next/link";
 export default function DoctorProfileCard() {
   return (
     <div className="bg-white shadow-md rounded-xl p-6 flex items-center gap-6">
@@ -34,7 +34,11 @@ export default function DoctorProfileCard() {
       <button className="border border-green-600 text-green-700 px-4 py-2 rounded-lg hover:bg-green-50">
         Edit Profile
       </button>
-
+<Link href="/">
+      <button className="border border-green-600 text-green-700 px-4 py-2 rounded-lg hover:bg-green-50">
+       Verify
+      </button>
+</Link>
     </div>
   );
 }

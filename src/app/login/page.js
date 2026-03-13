@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { supabase } from './supabase';
 
 const LoginPage = () => {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const [selectedRole, setSelectedRole] = useState('doctor'); // Default role
@@ -71,7 +73,7 @@ const LoginPage = () => {
     switch (role) {
       case 'doctor': return '/Doctors';
       case 'ngo': return '/Ngos';
-      case 'donor': return '/Donors';
+      case 'donor': return '/Donate';
       case 'waste_worker': return '/WasteManagement';
       case 'worker': return '/Workers';
       default: return '/';
@@ -94,7 +96,7 @@ const LoginPage = () => {
         });
         if (error) throw error;
         const userRole = data.user?.user_metadata?.role || selectedRole;
-        window.location.href = getRedirectPath(userRole);
+        router.push(getRedirectPath(userRole));
       } else {
         const { error } = await supabase.auth.signUp({
           email,
@@ -104,7 +106,7 @@ const LoginPage = () => {
           },
         });
         if (error) throw error;
-        window.location.href = getRedirectPath(selectedRole);
+        router.push(getRedirectPath(selectedRole));
       }
     } catch (error) {
       alert(error.message);
@@ -114,9 +116,7 @@ const LoginPage = () => {
   };
 
   const handleGoogleLogin = async () => {
-    // Note: Passing custom data (like role) via OAuth often requires 
-    // specific Supabase configuration or a post-login trigger.
-    const redirectUrl = `${window.location.origin}${getRedirectPath(selectedRole)}`;
+    const redirectUrl = `${window.location.origin}/auth/callback?next=${encodeURIComponent(getRedirectPath(selectedRole))}`;
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
@@ -141,7 +141,6 @@ const LoginPage = () => {
           </h2>
         </div>
 
-        {/* Role Selection Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
           {roles.map((role) => (
             <div
