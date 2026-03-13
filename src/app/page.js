@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client"
 
 import Image from "next/image"
@@ -333,6 +334,12 @@ NGOs and donors to improve village wellbeing.
 
 </main>
 )
+=======
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/login");
+>>>>>>> 29fbe9de68a5fcd0761b1f3caf4de0b2afcaad55
 }
 
 
