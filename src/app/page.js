@@ -36,7 +36,37 @@ export default function Home() {
 
 {/* HERO SECTION */}
 
-<section className="relative overflow-hidden bg-gradient-to-r from-teal-600 via-teal-500 to-green-400 text-white min-h-screen flex items-center px-8">
+<section className="relative overflow-hidden bg-gradient-to-r from-teal-600 via-teal-500 to-green-400 text-white min-h-screen px-8">
+
+<header className="relative z-20 mx-auto flex w-full max-w-6xl items-center justify-between pt-6">
+<Link
+href="/"
+className="flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md transition hover:bg-white/15"
+>
+<div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-teal-600 shadow-lg">
+<span className="text-lg font-bold">S</span>
+</div>
+<div>
+<p className="text-sm font-semibold tracking-[0.24em] text-white/70">SEVA SWASTHYA</p>
+<p className="text-base font-semibold text-white">Rural Health Network</p>
+</div>
+</Link>
+
+<nav className="hidden items-center gap-8 rounded-full border border-white/15 bg-black/10 px-6 py-3 text-sm font-medium text-white/85 backdrop-blur-md md:flex">
+<a href="#features" className="transition hover:text-white">Features</a>
+<a href="#how-it-works" className="transition hover:text-white">How It Works</a>
+<a href="#impact" className="transition hover:text-white">Impact</a>
+<a href="#blogs" className="transition hover:text-white">Blogs</a>
+</nav>
+
+<Link
+href="/login"
+className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-teal-700 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-teal-50"
+>
+Login
+<span className="text-base">→</span>
+</Link>
+</header>
 
 {/* floating medical icons */}
 
@@ -66,7 +96,7 @@ className="absolute text-4xl opacity-20 right-40 bottom-28"
 
 
 
-<div className="relative max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-20 w-full">
+<div className="relative mx-auto grid min-h-[calc(100vh-96px)] max-w-6xl items-center gap-20 pb-24 pt-14 md:grid-cols-2">
 
 {/* TEXT */}
 
@@ -159,7 +189,7 @@ d="M0,192L60,186.7C120,181,240,171,360,165.3C480,160,600,160,720,170.7C840,181,9
 
 {/* FEATURES */}
 
-<section className="py-24 bg-gray-50 px-8">
+<section id="features" className="py-24 bg-gray-50 px-8">
 
 <motion.h2
 variants={fadeUp}
@@ -194,7 +224,7 @@ className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto"
 
 {/* HOW IT WORKS */}
 
-<section className="relative py-28 px-8 bg-black text-white overflow-hidden">
+<section id="how-it-works" className="relative py-28 px-8 bg-black text-white overflow-hidden">
 
 <div className="absolute w-[500px] h-[500px] bg-teal-500/20 blur-[150px] top-20 left-20"></div>
 <div className="absolute w-[500px] h-[500px] bg-green-400/20 blur-[150px] bottom-10 right-10"></div>
@@ -231,7 +261,7 @@ How It Works
 
 {/* IMPACT */}
 
-<section className="bg-teal-600 text-white py-20 px-8">
+<section id="impact" className="bg-teal-600 text-white py-20 px-8">
 
 <div className="max-w-6xl mx-auto grid md:grid-cols-4 text-center gap-10">
 
@@ -248,7 +278,7 @@ How It Works
 
 {/* BLOG */}
 
-<section className="relative py-28 px-8 bg-gray-50 overflow-hidden">
+<section id="blogs" className="relative py-28 px-8 bg-gray-50 overflow-hidden">
 
 <div className="absolute w-[350px] h-[350px] bg-teal-300/20 blur-[120px] top-10 left-10"></div>
 <div className="absolute w-[350px] h-[350px] bg-green-300/20 blur-[120px] bottom-10 right-10"></div>
@@ -334,7 +364,6 @@ NGOs and donors to improve village wellbeing.
 
 </main>
 )
-
 
 
 
